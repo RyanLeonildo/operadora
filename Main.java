@@ -1,22 +1,22 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String [] args) {
 		Scanner sc = new Scanner(System.in);
-		int minutos ,minutos1 = 0, total;
+		Locale.setDefault(Locale.US);
+		
+		double conta = 50.0;
+		int minutos;
 		
 		System.out.println("QUANTOS MINUTOS USADOS?");
 			minutos = sc.nextInt();
-	
-		if (minutos <= 100) {
-			System.out.println("R$ 50,00");
-		}else {
-			 minutos1 = (minutos - 100)*2;
+		
+		if(minutos > 100) {
+			conta = conta + (minutos - 100) * 2;
 		}
-		
-			total = minutos1 + 50;
-			System.out.printf("R$ " + total);
-		
+		System.out.printf("R$ %.2f%n", conta);	
+			
 		sc.close();
 	}
 }
